@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cardápio</title>
+
+  <!-- Fontes e Material Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  
+  <link rel="stylesheet" href="style.css" />
+  <script src="main.js" defer></script>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="brand-logo">Pizzaria da Giu</div>
+    <ul>
+      <li><a href="#cardapio">Cardápio</a></li>
+      <li><a href="#!" onclick="toggleCart()">
+        <span class="material-icons">shopping_cart</span>
+        <span id="cart-count">0</span>
+      </a></li>
+    </ul>
+  </nav>
+
+  <!-- Cardápio -->
+  <section class="cardapio" id="cardapio">
+    <h2>Cardápio</h2>
+    <div id="product-container"></div>
+  </section>
+
+  <!-- Carrinho Flutuante -->
+  <div id="cart-panel" class="cart-panel">
+    <div class="cart-header">
+      <h3>Carrinho</h3>
+      <button id="close-cart" aria-label="Fechar carrinho" onclick="toggleCart()">
+        <span class="material-icons">close</span>
+      </button>
+    </div>
+    <div id="cart-items" class="cart-items"></div>
+    <div id="cart-total" class="cart-total">Total: R$ 0.00</div>
+    <button onclick="clearCart()" class="clear-cart-btn">Esvaziar</button>
+    <button onclick="sendOrderToWhatsApp()" class="whatsapp-btn">Finalizar Pedido via WhatsApp</button>
+  </div>
+
+  <!-- Mensagem de notificação -->
+  <div id="notification" class="notification"></div>
+
+</body>
+</html>
